@@ -3,10 +3,13 @@ import React, { useState } from 'react';
 import ProductList from './ProductList';
 import './App.css';
 import AboutUs from './AboutUs';
+import {useSelector} from 'react-redux';
 
 function App() {
   
   const [showProductList, setShowProductList] = useState(false);
+   const cart = useSelector((state) => state.cart);
+   console.log("cart:", cart);
 
   const handleGetStartedClick = () => {
     setShowProductList(true);
